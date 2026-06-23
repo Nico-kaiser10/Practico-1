@@ -1,0 +1,170 @@
+h1 {
+    font-family: "EB Garamond", serif;
+}
+
+.fondo {
+    background-image: url(../assets/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex {
+    display: flex;
+}
+.logo {
+    width: 100px;
+    height: 80px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.logo:hover {
+    transform: scale(1.2);
+}
+.modal-btn {
+    margin-top: 20px;
+    margin-right: 50px;
+    height: 50px ;
+    background-color: #FFFDD0;
+    border-radius: 50px;
+    padding: 6px 24px; 
+    font-size: 16px;
+    font-family: serif;
+}
+.posi {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.busquedas {
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 20%;    
+    border-radius: 50px;
+    padding: 6px 24px; 
+    font-size: 16px;
+    height: 50px ;
+    background-color: #FFFDD0;
+}
+.carrusel {
+    width: 60%;
+    margin: 40px auto;
+}
+.carousel-inner img {
+    height: 800px;
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.dropdown-menu .dropdown-item {
+    background-color: #FFFDD0;
+    font-family: serif;        
+    font-size: 20px;
+    color: #000000;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #000000;
+    color: white;
+}
+.titulo {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 50px;
+    color: #FFFDD0;
+}
+.Libros {
+    position: relative;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 0 60px;
+}
+.nombres {
+    font-size: 20px;
+    color: #FFFDD0;
+}
+.riel::-webkit-scrollbar {
+    display: none;
+}
+.riel {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+.riel {
+    display: flex;
+    gap: 25px;
+    padding: 15px 5px; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.tarjeta {
+    flex: 0 0 auto;
+    width: 220px;
+}
+.tarjeta img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.tarjeta .card {
+    overflow: hidden;
+}
+.tarjeta .card-body p {
+    font-size: 15px;
+    color: #FFFDD0; 
+}
+.tarjeta .card-img-top {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: #ff4d4d;
+    border: 1px solid #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.sigui { right: 15px; }
+.ante { left: 15px; }
+
+.pie {
+    background-color: transparent;
+    margin-top: 80px;
+    padding: 30px 0;
+    width: 100%;
+}
+.titupie {
+    color: #FFFDD0;
+    font-size: 24px;
+    font-family: "EB Garamond", serif;
+    margin: 0;
+}
+.caja {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #FFFDD0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.logo2 {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+.logo2:hover {
+    transform:  scale(1.1)
+}
