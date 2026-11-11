@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi biblioteca</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4" style="display:none">
+  <h2>Hola, <span id="nombre"></span></h2>
+  <p>Esta será la sección del usuario.</p>
+  <button class="btn btn-dark" onclick="cerrarSesion()">Cerrar sesión</button>
+
+  <script src="../../js/auth.js"></script>
+  <script>
+    protegerPagina().then((usuario) => {
+      if (usuario) document.getElementById('nombre').textContent = usuario.nombre;
+    });
+  </script>
+</body>
+</html>

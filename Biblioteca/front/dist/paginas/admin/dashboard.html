@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de Administración</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="display:none">
+  <nav class="navbar navbar-dark bg-dark px-3">
+    <span class="navbar-brand">Panel de Administración</span>
+    <div class="text-white">
+      <span id="nombreUsuario"></span>
+      <button class="btn btn-outline-light btn-sm ms-3" onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-md-2 bg-secondary-subtle min-vh-100 p-3">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#libros">Libros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Usuarios</a></li>
+        </ul>
+      </aside>
+
+      <main class="col-md-10 p-4">
+        <h2>Bienvenido</h2>
+        <p>Usuarios registrados: <strong id="totalUsuarios">-</strong></p>
+        <hr>
+        <section id="libros">
+          <h4>Administración de libros</h4>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../../js/auth.js"></script>
+  <script>
+    protegerPagina('Administrador').then(async (usuario) => {
+      if (!usuario) return;
+      document.getElementById('nombreUsuario').textContent = usuario.nombre + ' (' + usuario.rol + ')';
+
+      const r = await llamarApi('/admin/resumen');
+      if (r.ok) document.getElementById('totalUsuarios').textContent = r.datos.usuarios;
+    });
+  </script>
+</body>
+</html>

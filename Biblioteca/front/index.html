@@ -11,23 +11,42 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
 <body class="fondo">
-    <div class="flex">
-        <div>
-            <img class="logo" id="sorpresa" src="dist/assets/logo.jpg">
+    <nav class="navbar navbar-expand-lg barra sticky-top">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#inicio">
+          <img class="logo" id="sorpresa" src="dist/assets/logo.jpg" alt="Logo de la biblioteca">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Catálogo</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#cienciaficcion">Ciencia Ficción</a></li>
+                <li><a class="dropdown-item" href="#comics">Cómics</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Horarios y contacto</a></li>
+          </ul>
+
+          <a href="dist/paginas/login.html" class="modal-btn btn-login">Iniciar sesión</a>
         </div>
-        <div class="posi">
-            <input class="busquedas" type="text" placeholder="Buscar 🔍">
-            <button type="button" class="modal-btn" data-bs-toggle="dropdown" aria-expanded="false">Categorias</button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Audiolibros</a></li>
-                <li><a class="dropdown-item" href="#">Libros</a></li>
-                <li><a class="dropdown-item" href="#">Revistas</a></li>
-            </ul>
-           
-        </div>
-        
-    </div>
+      </div>
+    </nav>
     <div>
+      <header class="hero" id="inicio">
+        <h1 class="hero-titulo">Biblioteca Virtual</h1>
+        <p class="hero-texto">Libros, cómics y mucho más para leer, descubrir y compartir.</p>
+        <a href="#cienciaficcion" class="modal-btn btn-login">Ver catálogo</a>
+      </header>
       <h1 class="titulo"><u>Nuevos ingresos a la colección</u></h1>
     </div>
     <div>
@@ -55,7 +74,7 @@
 </div>
 <div>
   <div>
-    <h1 class="titulo"><u> Recomendaciones del Genero Ciencia Ficcion</u></h1>
+    <h1 class="titulo" id="cienciaficcion"><u> Recomendaciones del Genero Ciencia Ficcion</u></h1>
     
     <div class="Libros">
       <button class="flecha sigui " id="siguiente">❯</button>
@@ -139,7 +158,7 @@
 
   </div>
     <div>
-    <h1 class="titulo"><u>Recomendaciones del Genero comics</u></h1>
+    <h1 class="titulo" id="comics"><u>Recomendaciones del Genero comics</u></h1>
     
     <div class="Libros">
       <button class="flecha sigui " id="siguiente2">❯</button>
@@ -221,7 +240,54 @@
         </div>
     </div>
   </div>
+  <section class="seccion" id="servicios">
+    <h1 class="titulo"><u>Nuestros servicios</u></h1>
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="servicio">
+            <div class="servicio-icono">📖</div>
+            <h3>Sala de lectura</h3>
+            <p>Un espacio tranquilo para leer y estudiar con toda la colección a mano.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="servicio">
+            <div class="servicio-icono">🔄</div>
+            <h3>Préstamo de libros</h3>
+            <p>Llevate libros, cómics y revistas a tu casa y devolvelos en el plazo acordado.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="servicio">
+            <div class="servicio-icono">🎧</div>
+            <h3>Audiolibros</h3>
+            <p>Escuchá tus historias favoritas desde donde estés.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="seccion" id="contacto">
+    <h1 class="titulo"><u>Horarios y contacto</u></h1>
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-5">
+          <div class="servicio">
+            <h3>Horarios</h3>
+            <p>Lunes a viernes: 10:00 a 19:00<br>Sábados: 10:00 a 14:00<br>Domingos: cerrado</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-5">
+          <div class="servicio">
+            <h3>Contacto</h3>
+            <p>Escribinos por nuestras redes o visitanos en el local (mapa abajo).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <footer class="pie">
   <div class="container-fluid px-5">
     <div class="row align-items-center">

@@ -1,0 +1,116 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../assets/fondo.jpg) no-repeat center / cover;
+    font-family: "EB Garamond", serif;
+    overflow-x: hidden;
+}
+
+.libro {
+    --ancho: min(720px, 94vw);
+    position: relative;
+    width: var(--ancho);
+    height: 470px;
+    perspective: 2200px;
+    left: calc(var(--ancho) / 4); 
+    transition: left 1.2s ease;
+}
+
+.libro.abierto { left: 0; }
+
+.pagina-der {
+    position: absolute;
+    right: 0; top: 0;
+    width: 50%; height: 100%;
+    background: #FFFDD0;
+    border-radius: 0 10px 10px 0;
+    padding: 40px 34px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    color: #3b2412;
+    visibility: hidden;
+    transition: visibility 0s 0.6s;
+}
+
+.libro.abierto .pagina-der { visibility: visible; }
+.pagina-der h2 { font-weight: 800; text-align: center; margin-bottom: 22px; }
+.pagina-der label { font-weight: 600; font-size: 18px; }
+
+.btn-ingresar {
+    background: #4a2c17;
+    color: #FFFDD0;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 8px;
+}
+.btn-ingresar:hover { background: #2e1a0d; color: #fff; }
+
+.tapa {
+    position: absolute;
+    right: 0; top: 0;
+    width: 50%; height: 100%;
+    transform-origin: left center;
+        transform-style: preserve-3d;
+    transition: transform 1.2s ease;
+    cursor: pointer;
+}
+.libro.abierto .tapa {
+    transform: rotateY(-180deg);
+    cursor: default;
+}
+.cara {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 0 10px 10px 0;
+    padding: 40px 30px;
+}
+
+.frente {
+  background: linear-gradient(135deg, #5a3419, #3b2412);
+  border: 3px solid #FFFDD0;
+  outline: 6px solid #3b2412;
+  color: #FFFDD0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.frente h1 { font-size: 42px; font-weight: 800; margin: 14px 0; }
+.frente .adorno { font-size: 54px; }
+.frente .pista { font-size: 18px; opacity: 0.85; animation: latido 1.8s infinite; }
+@keyframes latido { 50% { opacity: 0.3; } }
+
+.dorso {
+  transform: rotateY(180deg);
+  background: #fbf3d5;
+  border-radius: 10px 0 0 10px;
+  color: #3b2412;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dorso h2 { font-weight: 800; }
+.dorso p { font-size: 19px; }
+.dorso a, .dorso button.link {
+  color: #4a2c17;
+  background: none;
+  border: 0;
+  font-size: 17px;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 600px) {
+  .libro { height: 440px; }
+  .pagina-der, .cara { padding: 22px 14px; }
+  .frente h1 { font-size: 28px; }
+  .dorso p { font-size: 15px; }
+}
